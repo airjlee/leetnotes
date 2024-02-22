@@ -1,10 +1,20 @@
 {
     "version": "1.0.0",
     "manifest_version": 3,
-    "name": "React Chrome Extension",
+    "name": "LeetNotes",
     "description": "This is a Chrome extension built with React and JS",
     "action": {
         "default_popup": "js/index.html",
-        "default_title": "React Chrome Extension"
-    }
+        "default_title": "LeetNotes"
+    },
+
+    "content_scripts": [
+        {
+          "matches": ["https://leetcode.com/problems/*",
+            "https://twonouns.com/"
+        ],
+
+          "js": ["contentScript.js"]
+        }
+      ]
 }
